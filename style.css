@@ -11,7 +11,10 @@ p{
 html, body{
     width: 100%;
     height:100%;
-    overflow:hidden; /*No Scrolling! */
+    overflow:visible
+}
+#gameContainer{
+    height:100vh;
 }
 #Background,
 #gameExplain, 
@@ -50,6 +53,14 @@ html, body{
 #Me, #harley, #lucas, #jo, #charles, #K8{
     display:none;
 }
+#dialogueimg{
+    height:40vh;
+    position:absolute;
+    display:none;
+    left:30vw;
+    top:5vh;
+}
+
 #gameContainer{
 width: 100%;
 height:100%;
@@ -87,11 +98,10 @@ z-index:0;
 }
 #dialogueBox p{
     font-family: Orbitron; 
-    font-size: 14px; 
+    font-size: 25px; 
     font-style: normal; 
     font-variant: normal; 
-    font-weight: 400; 
-    line-height: 20px; 
+
 }
 #dialogueBox h1 {
     font-family: 'Ethnocentric Rg', sans-serif;
@@ -199,8 +209,9 @@ z-index:0;
     font-weight:bold;
   }
   #ai, #notai{
-    background-color: #5F98D9;
+    background-color: #59B9A6;
     position:absolute;
+    text-align: center;
     border-radius: 80px;
     color:whitesmoke;
     padding:20px;
@@ -213,19 +224,16 @@ z-index:0;
     font-weight:bold;
     cursor:pointer;
   }
+
   #game2again{
     color:red;
     text-align: center;
     display: 'none';
-    font-size: 400%;
+    font-size: 200%;
     margin-top:23vh;
     z-index:100;
     
   }
-#ai:hover, #Notai:hover {
-    background-color: #5283bb;
-}
-
 #game2question{
     background-color: #5F98D9;
     position:absolute;
@@ -238,10 +246,10 @@ z-index:0;
     width:40vw;
     text-align: center;
     left:30vw;
-    font-size: 200%;
+    font-size: 150%;
 }
 #game2box1, #game2box2{    
-    background-color: #5F98D9;
+    background-color: #59B9A6;
     position:absolute;
     border-radius: 80px;
     color:whitesmoke;
@@ -280,6 +288,12 @@ z-index:0;
     left: 7vw;
     top:-1vh;
 }
+#complete{
+    z-index:100;
+}
+#awardText{
+    z-index:100;
+}
 #complete p{
     color:whitesmoke;
     font-size: 400%;
@@ -302,7 +316,7 @@ z-index:0;
     position:absolute;
 }
 #game3 .option{
-    background-color: #5F98D9;
+    background-color: #59B9A6;
     width:30vw;
     position:absolute;
     color:whitesmoke;
@@ -340,12 +354,12 @@ z-index:0;
     color:red;
     text-align: center;
     margin-top:25vh;
-    font-size: 200%;
+    font-size: 180%;
     display: none;
 }
 
 #game4 #option1, #game4 #option2{
-    background-color: #5F98D9;
+    background-color: #59B9A6;
     position:absolute;
     border-radius: 80px;
     color:whitesmoke;
@@ -367,6 +381,7 @@ z-index:0;
     bottom:10vh;
     left:23vw;
 }
+
 #harleysprite{
     bottom:12vh;
     left:80vw;
@@ -386,4 +401,31 @@ z-index:0;
 #K8sprite{
     top:28vh;
     right:25vw;
+}
+
+#harleyspriteq{
+    top:70vh;
+    left:79vw;
+}
+#lucasspriteq{
+    top:20vh;
+    left:36vw;
+}
+#jospriteq{
+    top:44vh;
+    left:73vw;
+}
+#charlesspriteq{
+    top:39vh;
+    left:18vw;
+}
+#K8spriteq{
+    top:28vh;
+    right:25vw;
+}
+
+.spriteq{
+    height:5vh;
+    display:none;
+    position:absolute;
 }
