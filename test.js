@@ -67,6 +67,7 @@ const charlesq = document.getElementById("charlesspriteq");
 const k8q = document.getElementById("K8spriteq");
 
 var x = 0;
+var game3track = 0;
 //end 
 const endcover = document.getElementById("endcover");
 const playagain = document.getElementById("Playagain");
@@ -179,9 +180,9 @@ async function run(){
 
     await waitForClick(ai);
 
-    notai.innerHTML = "Not Ai";
+    notai.innerHTML = "NOT AI";
     notai.style.color = "whitesmoke"
-    ai.innerHTML = "Ai";
+    ai.innerHTML = "AI";
     ai.style.color = "whitesmoke"
     game1t.textContent = "Music Shuffle"
     game1l.innerHTML = "";
@@ -200,9 +201,9 @@ async function run(){
 
     await waitForClick(notai);
 
-    notai.innerHTML = "Not Ai";
+    notai.innerHTML = "NOT AI";
     notai.style.color = "whitesmoke"
-    ai.innerHTML = "Ai";
+    ai.innerHTML = "AI";
     ai.style.color = "whitesmoke"
     game1t.textContent = "Google Search"
     game1l.innerHTML = "";
@@ -219,9 +220,9 @@ async function run(){
     game1l.appendChild(li3);
 
     await waitForClick(ai);
-    notai.innerHTML = "Not Ai";
+    notai.innerHTML = "NOT AI";
     notai.style.color = "whitesmoke"
-    ai.innerHTML = "Ai";
+    ai.innerHTML = "AI";
     ai.style.color = "whitesmoke"
     game1t.textContent = "Barcode Scanning"
     game1l.innerHTML = "";
@@ -237,19 +238,18 @@ async function run(){
     li3.innerHTML = "Does not analyse your purchase patterns.";
     game1l.appendChild(li3);
     await waitForClick(notai);
+    await waitForClick(document);
     game1.style.display = 'none';
-
-    complete.style.display = 'block';
-    
-    awardimg.src = "Media/K8 torso.png"
+    awardimg.src = "./Media/K8 torso.png"
     awardimgText.innerHTML = "Torso Built!"
+    complete.style.display = 'block';
 
     await waitForClick(document);
-    complete.style.display = 'none';
     lucasq.style.display = 'block';    
     sprites[5].style.visibility = "visible";
     x += 1;
     makelight();
+    complete.style.display = 'none';
 
     await waitForClick(sprites[2]);
     makedark();
@@ -353,8 +353,9 @@ async function run(){
     await waitForClick(document);
     sprites[5].src = "Media/+ legs.png"
     complete.style.display = 'none';
-    makelight();
     x += 1;
+    makelight();
+    
     joq.style.display = 'block';
 
     await waitForClick(sprites[3])
@@ -415,42 +416,49 @@ async function run(){
     game3option[0].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[4])
+    game3track += 1
     game3option[0].style.border = '0px #A8D3FB solid';
     game3option[0].innerHTML = "<p>Greetings and Introduction</p>";
     game3optionq[4].style.display = 'none'
     game3option[1].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[6])
+    game3track += 1
     game3option[1].style.border = '0px #A8D3FB solid';
     game3option[1].innerHTML = "<p>Response Area</p>";
     game3optionq[6].style.display = 'none'
     game3option[2].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[0])
+    game3track += 1
     game3option[2].style.border = '0px #A8D3FB solid';
     game3option[2].innerHTML = "<p>Text Input Field</p>";
     game3optionq[0].style.display = 'none'
     game3option[3].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[2])
+    game3track += 1
     game3option[3].style.border = '0px #A8D3FB solid';
     game3option[3].innerHTML = "<p>Image Input</p>";
     game3optionq[2].style.display = 'none'
     game3option[4].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[5])
+    game3track += 1
     game3option[4].style.border = '0px #A8D3FB solid';
     game3option[4].innerHTML = "<p>Voice Input</p>";
     game3optionq[5].style.display = 'none'
     game3option[5].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[1])
+    game3track += 1
     game3option[5].style.border = '0px #A8D3FB solid';
     game3option[5].innerHTML = "<p>Chat History</p>";
     game3optionq[1].style.display = 'none'
     game3option[6].style.border = '5px #A8D3FB solid';
 
     await waitForClick(game3optionq[3])
+    game3track += 1
     game3option[6].style.border = '0px #A8D3FB solid';
     game3option[6].innerHTML = "<p>Account Settings</p>";
     game3optionq[3].style.display = 'none'
@@ -537,11 +545,12 @@ async function run(){
     game4option1.innerHTML = "<p>List some things to do in Bangkok for 3 days.</p>";
     game4option2.innerHTML = "<p>I‘m a husband planning a 3-day 2-night trip to Bangkok with my wife. Create a fun and engaging itinerary in bullet points, including a mix of cultural experiences and suggestions for local restaurants.</p>"
     
-    await waitForClick(game4option2)
+    await waitForClick(game4option2);
+    await waitForClick(document);
     game4.style.display = 'none';
     complete.style.display = 'block';
-    awardimg.src = "Media/head.png"
-    awardimgText.innerHTML = "Torso Built!"
+    awardimg.src = "Media/K8 head.png"
+    awardimgText.innerHTML = "Head Built!"
 
     await waitForClick(document);
     complete.style.display = 'none';
@@ -634,7 +643,17 @@ function makelight(){
     }
     return;
 }
-  
+function game3stuff(){
+    switch (game3track){
+        case 0 : game3option[0].innerHTML = "<p style='color:red'> 1. Try Again! </p>"; break;
+        case 1 : game3option[1].innerHTML = "<p style='color:red'> 2. Try Again! </p>";break;
+        case 2 : game3option[2].innerHTML = "<p style='color:red'> 3. Try Again! </p>";break;
+        case 3 : game3option[3].innerHTML = "<p style='color:red'> 4. Try Again! </p>";break;
+        case 4 : game3option[4].innerHTML = "<p style='color:red'> 5. Try Again! </p>";break;
+        case 5 : game3option[5].innerHTML = "<p style='color:red'> 6. Try Again! </p>";break;
+        case 6 : game3option[6].innerHTML = "<p style='color:red'> 7. Try Again! </p>";break;
+    }
+}
 
 startcover.style.display = 'block';
 StartGame.addEventListener('click', () => {
