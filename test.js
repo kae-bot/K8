@@ -347,7 +347,7 @@ async function run(){
     game2.style.display = "none";
     complete.style.display = 'block';
     
-    awardimg.src = "Media/k8 legs.png"
+    awardimg.src = "Media/K8 legs.png"
     awardimgText.innerHTML = "Legs Built!"
 
     await waitForClick(document);
