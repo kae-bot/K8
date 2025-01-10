@@ -289,16 +289,14 @@ z-index:0;
     top:-1vh;
 }
 #complete{
-    z-index:100;
-}
-#awardText{
-    z-index:100;
+    display:none;
 }
 #complete p{
     color:whitesmoke;
     font-size: 400%;
-    top:80vh;
-    text-align: center;
+    top:15vh;
+    left:35vw;
+    position:absolute;
 }
 #complete .stars{
     position:absolute;
@@ -368,7 +366,7 @@ z-index:0;
     height:50vh;
     width:45vw;
     left:2vw;
-    font-size: 200%;
+    font-size: 150%;
     top:45vh;
 }
 .sprite{
